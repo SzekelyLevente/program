@@ -10,33 +10,41 @@ namespace program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Adja meg hogy hány darab számot szeretne megadni:");
-            int db = int.Parse(Console.ReadLine());
-            int[] szamok = new int[db];
-            for (int i = 0; i < db; i++)
+            try
             {
-                Console.WriteLine("Adja meg a(z) " + (i + 1) + ". számot: ");
-                szamok[i] = int.Parse(Console.ReadLine());
-            }
-            int max = szamok[0];
-            for (int i = 1; i < szamok.Length; i++)
-            {
-                if(szamok[i]>max)
+                Console.WriteLine("Adja meg hogy hány darab számot szeretne megadni:");
+                int db = int.Parse(Console.ReadLine());
+                int[] szamok = new int[db];
+                for (int i = 0; i < db; i++)
                 {
-                    max = szamok[i];
+                    Console.WriteLine("Adja meg a(z) " + (i + 1) + ". számot: ");
+                    szamok[i] = int.Parse(Console.ReadLine());
                 }
-            }
-            Console.WriteLine("A legnagyobb szám: " + max);
-            int min = szamok[0];
-            for (int i = 1; i < szamok.Length; i++)
-            {
-                if (szamok[i] < min)
+                int max = szamok[0];
+                for (int i = 1; i < szamok.Length; i++)
                 {
-                    min = szamok[i];
+                    if (szamok[i] > max)
+                    {
+                        max = szamok[i];
+                    }
                 }
+                Console.WriteLine("A legnagyobb szám: " + max);
+                int min = szamok[0];
+                for (int i = 1; i < szamok.Length; i++)
+                {
+                    if (szamok[i] < min)
+                    {
+                        min = szamok[i];
+                    }
+                }
+                Console.WriteLine("A legkissebb szám: " + min);
+                Console.ReadKey();
             }
-            Console.WriteLine("A legkissebb szám: " + min);
-            Console.ReadKey();
+            catch(Exception e)
+            {
+                Console.Write("Hiba történt!");
+                Console.ReadKey();
+            }
         }
     }
 }
