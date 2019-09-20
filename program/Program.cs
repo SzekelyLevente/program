@@ -27,6 +27,15 @@ namespace program
                 }
             }
             Console.WriteLine("A legnagyobb szám: " + max);
+            int min = szamok[0];
+            for (int i = 1; i < szamok.Length; i++)
+            {
+                if (szamok[i] < min)
+                {
+                    min = szamok[i];
+                }
+            }
+            Console.WriteLine("A legkissebb szám: " + min);
             Console.ReadKey();
         }
     }
