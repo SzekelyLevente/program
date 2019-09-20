@@ -10,8 +10,10 @@ namespace program
     {
         static void Main(string[] args)
         {
-            int[] szamok = new int[10];
-            for (int i = 0; i < 10; i++)
+            Console.WriteLine("Adja meg hogy hány darab számot szeretne megadni:");
+            int db = int.Parse(Console.ReadLine());
+            int[] szamok = new int[db];
+            for (int i = 0; i < db; i++)
             {
                 Console.WriteLine("Adja meg a(z) " + (i + 1) + ". számot: ");
                 szamok[i] = int.Parse(Console.ReadLine());
